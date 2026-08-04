@@ -1,19 +1,19 @@
 {
-    "name": "weboldalnet/package-template",
-    "description": "teszt",
+    "name": "weboldalnet/commerce-szamlazzhu",
+    "description": "Számlázz.hu integráció Laravel-hez",
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Weboldalnet\\PackageTemplate\\": [ "src/",  "app/"]
+            "Weboldalnet\\CommerceSzamlazzhu\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Weboldalnet\\PackageTemplate\\ArticleServiceProvider"
+                "Weboldalnet\\CommerceSzamlazzhu\\CommerceSzamlazzhuServiceProvider"
             ],
             "aliases": {
-                "ArticleServiceProvider": "Weboldalnet\\PackageTemplate\\ArticleServiceProvider"
+                "CommerceSzamlazzhu": "Weboldalnet\\CommerceSzamlazzhu\\CommerceSzamlazzhuServiceProvider"
             }
         }
     },

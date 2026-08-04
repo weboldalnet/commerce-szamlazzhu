@@ -1,13 +1,13 @@
 <?php
 
-namespace Weboldalnet\PackageTemplate;
+namespace Weboldalnet\CommerceSzamlazzhu;
 
 use Illuminate\Support\ServiceProvider;
-use Weboldalnet\PackageTemplate\Support\PackageHelper;
-use Weboldalnet\PackageTemplate\Console\ExtendViewsArticlesCommand;
-use Weboldalnet\PackageTemplate\Console\InstallArticlesCommand;
+use Weboldalnet\CommerceSzamlazzhu\Support\PackageHelper;
+use Weboldalnet\CommerceSzamlazzhu\Console\ExtendViewsCommerceSzamlazzhuCommand;
+use Weboldalnet\CommerceSzamlazzhu\Console\InstallCommerceSzamlazzhuCommand;
 
-class ArticleServiceProvider extends ServiceProvider
+class CommerceSzamlazzhuServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -33,11 +33,11 @@ class ArticleServiceProvider extends ServiceProvider
     public function register()
     {
         $this->commands([
-            InstallArticlesCommand::class,
+            InstallCommerceSzamlazzhuCommand::class,
         ]);
 
         $this->commands([
-            ExtendViewsArticlesCommand::class,
+            ExtendViewsCommerceSzamlazzhuCommand::class,
         ]);
     }
 }

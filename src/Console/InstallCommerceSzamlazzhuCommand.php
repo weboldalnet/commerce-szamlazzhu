@@ -1,12 +1,12 @@
 <?php
 
-namespace Weboldalnet\PackageTemplate\Console;
+namespace Weboldalnet\CommerceSzamlazzhu\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
-use Weboldalnet\PackageTemplate\Support\PackageHelper;
+use Weboldalnet\CommerceSzamlazzhu\Support\PackageHelper;
 
-class InstallArticlesCommand extends Command
+class InstallCommerceSzamlazzhuCommand extends Command
 {
     protected $signature = PackageHelper::PACKAGE_PREFIX . ':install {--tag=}';
     protected $description = PackageHelper::PACKAGE_NAME . ' fájlok publikálása a projectbe';
@@ -18,7 +18,7 @@ class InstallArticlesCommand extends Command
         $this->info(PackageHelper::PACKAGE_NAME . ' fájlok publikálása a projectbe...');
 
         Artisan::call('vendor:publish', [
-            '--provider' => 'Weboldalnet\\PackageTemplate\\ArticleServiceProvider',
+            '--provider' => 'Weboldalnet\\CommerceSzamlazzhu\\CommerceSzamlazzhuServiceProvider',
             '--tag' => $tag,
             '--force' => true,
         ]);

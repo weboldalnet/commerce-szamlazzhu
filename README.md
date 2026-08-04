@@ -1,2 +1,2 @@
-# package-template
-Template-ként szolgál minden további package repository-hoz
+# commerce-szamlazzhu
+Számlázz.hu integráció Laravel-hez.
