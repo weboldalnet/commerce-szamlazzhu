@@ -11,11 +11,14 @@
         "laravel": {
             "providers": [
                 "Weboldalnet\\CommerceSzamlazzhu\\CommerceSzamlazzhuServiceProvider"
-            ],
-            "aliases": {
-                "CommerceSzamlazzhu": "Weboldalnet\\CommerceSzamlazzhu\\CommerceSzamlazzhuServiceProvider"
-            }
+            ]
         }
     },
-    "require": {}
+    "require": {
+        "php": "^8.2",
+        "weboldalnet/commerce-core": "^1.0",
+        "ext-curl": "*",
+        "ext-simplexml": "*",
+        "ext-json": "*"
+    }
 }

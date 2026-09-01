@@ -7,8 +7,11 @@
     </a>
     <div class="collapse collapse-box" id="szamlazzhuCollapse">
         <div class="collapse-menu-points">
-            <a href="/szamlazzhu-settings" class="fw-800">
+            <a href="/webshop/szamlazzhu/settings" class="fw-800">
                 Beállítások <i class="fa-solid fa-chevron-right"></i>
+            </a>
+            <a href="/webshop/invoices">
+                Számlák <i class="fa-solid fa-chevron-right"></i>
             </a>
         </div>
     </div>

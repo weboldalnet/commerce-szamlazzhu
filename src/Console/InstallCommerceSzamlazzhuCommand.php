@@ -15,6 +15,10 @@ class InstallCommerceSzamlazzhuCommand extends Command
     {
         $tag = $this->option('tag');
 
+        if (empty($tag)) {
+            $tag = PackageHelper::PACKAGE_PREFIX . '-all';
+        }
+
         $this->info(PackageHelper::PACKAGE_NAME . ' fájlok publikálása a projectbe...');
 
         Artisan::call('vendor:publish', [
@@ -23,43 +27,6 @@ class InstallCommerceSzamlazzhuCommand extends Command
             '--force' => true,
         ]);
 
-        // 2. SCSS import
-        $this->addScssImport();
-
         $this->info(PackageHelper::PACKAGE_NAME . ' telepítése sikeres!');
-    }
-
-    protected function addScssImport()
-    {
-        $stylesPath = getcwd() . '/public/site/styles.scss';
-        $importLine = '@import "pages/blog";';
-
-        if (!file_exists($stylesPath)) {
-            $this->warn('styles.scss nem található.');
-            return;
-        }
-
-        $content = file_get_contents($stylesPath);
-
-        if (strpos($content, $importLine) !== false) {
-            $this->info('SCSS már importálva van.');
-
-            $output = null; $retval = null;
-            exec('gulp', $output, $retval);
-            echo "A gulp lefutott!\n";
-
-            return;
-        }
-
-        file_put_contents(
-            $stylesPath,
-            rtrim($content) . PHP_EOL . $importLine . PHP_EOL
-        );
-
-        $this->info('SCSS hozzáadva.');
-
-        $output = null; $retval = null;
-        exec('gulp', $output, $retval);
-        echo "A gulp lefutott!\n";
     }
 }

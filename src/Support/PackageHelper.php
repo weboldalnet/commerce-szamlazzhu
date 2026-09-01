@@ -18,6 +18,16 @@ class PackageHelper
             'source' => __DIR__.'/../../settings',
             'destination' => '/settings/commerce-szamlazzhu',
         ],
+        'config' => [
+            'name' => 'config | config/commerce-szamlazzhu.php',
+            'source' => __DIR__.'/../../config/commerce-szamlazzhu.php',
+            'destination' => '/config/commerce-szamlazzhu.php',
+        ],
+        'database' => [
+            'name' => 'database | database/migrations/',
+            'source' => __DIR__.'/../../database/migrations',
+            'destination' => '/database/migrations',
+        ],
     ];
 
     const PACKAGE_VIEW_EXTENDS = [
