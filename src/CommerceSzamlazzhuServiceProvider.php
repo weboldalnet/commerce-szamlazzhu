@@ -37,16 +37,25 @@ class CommerceSzamlazzhuServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../settings/views', PackageHelper::PACKAGE_PREFIX);
 
         // Provider regisztráció
-        if (SzamlazzhuSettingsService::getBool('enabled', false)) {
-            try {
-                $invoiceManager = $this->app->make(InvoiceManager::class);
+        try {
+            $invoiceManager = $this->app->make(InvoiceManager::class);
+
+            // Telepített integrációként mindig bejelentkezünk, hogy a webshop
+            // beállítófelülete akkor is fel tudja kínálni, ha a modul még
+            // nincs bekapcsolva – különben nem lenne mit kiválasztani.
+            $invoiceManager->registerAvailable('szamlazzhu', [
+                'name' => 'Számlázz.hu',
+                'settings_url' => '/webshop/szamlazzhu/settings',
+            ]);
+
+            if (SzamlazzhuSettingsService::getBool('enabled', false)) {
                 $invoiceManager->register(
                     'szamlazzhu',
                     $this->app->make(SzamlazzhuInvoiceProvider::class)
                 );
-            } catch (\Throwable $e) {
-                \Illuminate\Support\Facades\Log::error('Számlázz.hu regisztrációs hiba: ' . $e->getMessage());
             }
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::error('Számlázz.hu regisztrációs hiba: ' . $e->getMessage());
         }
 
         // migrációk

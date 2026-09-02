@@ -1,15 +1,17 @@
 @extends('admin.layouts.layout')
+@section('title', 'Számlák')
 
 @section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <div class="header-box">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <h1 class="mb-0">Számlák</h1>
-                        <p class="text-muted small mb-0">Rendelésekhez tartozó Számlázz.hu bizonylatok</p>
-                    </div>
+            {{-- Egy gyerekelem: a flex burkolat balra tolná a címet, a .header-box
+                 saját text-align: center-je viszont középre rendezi – ahogy a
+                 szállítmány-listán is. --}}
+            <div class="header-box my-2">
+                <div>
+                    <h1 class="mb-0">Számlák</h1>
+                    <p class="text-muted small mb-0">Rendelésekhez tartozó Számlázz.hu bizonylatok</p>
                 </div>
             </div>
 
@@ -42,7 +44,7 @@
             </div>
 
             {{-- Nincs overflow-hidden: az levágná a sorok Műveletek legördülőjét. --}}
-            <div class="content-box bordered p-0">
+            <div class="content-box bordered p-0 mb-3">
                 <table class="table table-hover mb-0">
                     <thead class="bg-light">
                         <tr>

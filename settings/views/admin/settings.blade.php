@@ -1,10 +1,11 @@
 @extends('admin.layouts.layout')
+@section('title', 'Számlázz.hu beállítások')
 
 @section('content')
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <div class="header-box">
+            <div class="header-box my-2">
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
                         <h1 class="mb-0">Számlázz.hu beállítások</h1>
@@ -27,8 +28,8 @@
                 <div class="row">
                     <!-- Fő beállítások -->
                     <div class="col-lg-6 mb-4">
-                        <div class="header-box product-info">Modul állapota</div>
-                        <div class="content-box bordered">
+                        <div class="header-box product-info mb-1">Modul állapota</div>
+                        <div class="content-box bordered mb-3">
                             <div class="custom-control custom-switch mb-3">
                                 <input type="checkbox" class="custom-control-input" id="enabled" name="enabled" 
                                        @if(filter_var($szSettings['enabled'] ?? false, FILTER_VALIDATE_BOOLEAN)) checked @endif>
@@ -41,8 +42,8 @@
                     </div>
 
                     <div class="col-lg-6 mb-4">
-                        <div class="header-box product-info">Működési mód</div>
-                        <div class="content-box bordered">
+                        <div class="header-box product-info mb-1">Működési mód</div>
+                        <div class="content-box bordered mb-3">
                             <div class="form-group mb-3">
                                 <label class="fw-600">Számlázási mód</label>
                                 <select name="billing_mode" id="billing_mode" class="form-control">
@@ -65,8 +66,8 @@
 
                     <!-- Hitelesítés -->
                     <div class="col-12 mb-4">
-                        <div class="header-box product-info">Hitelesítés (Agent kulcs vagy Felhasználó)</div>
-                        <div class="content-box bordered">
+                        <div class="header-box product-info mb-1">Hitelesítés (Agent kulcs vagy Felhasználó)</div>
+                        <div class="content-box bordered mb-3">
                             <div class="row">
                                 <div class="col-md-12 mb-3">
                                     <label class="fw-600">Számla Agent kulcs (ajánlott)</label>
@@ -87,8 +88,8 @@
 
                     <!-- Számla alapértelmezések -->
                     <div class="col-lg-6 mb-4">
-                        <div class="header-box product-info">Számla beállítások</div>
-                        <div class="content-box bordered">
+                        <div class="header-box product-info mb-1">Számla beállítások</div>
+                        <div class="content-box bordered mb-3">
                             <div class="form-group mb-3">
                                 <label class="fw-600">Számla típusa</label>
                                 <select name="invoice_type" class="form-control">
@@ -150,8 +151,8 @@
 
                     <!-- Eladó adatai -->
                     <div class="col-lg-6 mb-4">
-                        <div class="header-box product-info">Eladó adatai (felülbírálás)</div>
-                        <div class="content-box bordered">
+                        <div class="header-box product-info mb-1">Eladó adatai (felülbírálás)</div>
+                        <div class="content-box bordered mb-3">
                             <div class="form-group mb-3">
                                 <label class="fw-600">Bank neve</label>
                                 <input type="text" name="bank_name" class="form-control" value="{{ $szSettings['bank_name'] ?? '' }}">
