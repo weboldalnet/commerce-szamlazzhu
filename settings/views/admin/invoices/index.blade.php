@@ -133,7 +133,6 @@
                                                     </form>
                                                 @endif
                                             @endif
-                                            <a class="dropdown-item small text-muted" href="#">Log megtekintése (Hamarosan)</a>
                                         </div>
                                     </div>
                                 </td>

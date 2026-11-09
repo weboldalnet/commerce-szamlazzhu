@@ -3,3 +3,6 @@
 
 ## [1.0.1] - 2026-01-06
 ### Fájlok feltöltésének tesztelése
+
+## [1.0.6] - 2026-11-09
+### Számlák lista: a befejezetlen „Log megtekintése (Hamarosan)” menüpont kivéve
